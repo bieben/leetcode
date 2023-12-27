@@ -26,4 +26,9 @@ Notes:
 - Space: O(1), No need extra array space, just use the given array.  
 
 Notes:
-- When using force brute, it would be out of the index within just one for loop since the loop cannot update its size with the popping, so use two loops is better. 
+- When using force brute, it would be out of the index within just one for loop since the loop cannot update its size with the popping, so use two loops is better.  
+
+### Summary:
+Good start for the Carl's bootcamp!  
+Today's problem is easy and time costs about 2 hours.  
+Keep hustling!
