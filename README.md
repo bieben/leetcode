@@ -17,3 +17,6 @@
 1. Use fast and slow pointer
 - Use fast pointer to iterate orignal array.
 - Use slow pointer to skip target value. Update the array follwing the fast pointer. When pointing no-target value, update it with the fast pointer.  When pointing the target value, keep the pointer.
+2. Complexity
+- Time: O(n)
+- Space: O(1), No need extra array space, just use the given array.
