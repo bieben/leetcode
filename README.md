@@ -13,10 +13,17 @@
 - Time: O(logn)
 - Space: O(1), No need extra array space, just use the given array.
 
+Notes:  
+- Very basic problem for Binary Search.   
+- Strengthen the understanding of edge condition about left and right pointers.
+
 ### [27.Remove Element](https://leetcode.com/problems/remove-element/description/) - first time
 1. Use fast and slow pointer
 - Use fast pointer to iterate orignal array.
 - Use slow pointer to skip target value. Update the array follwing the fast pointer. When pointing no-target value, update it with the fast pointer.  When pointing the target value, keep the pointer.
 2. Complexity
 - Time: O(n)
-- Space: O(1), No need extra array space, just use the given array.
+- Space: O(1), No need extra array space, just use the given array.  
+
+Notes:
+- When using force brute, it would be out of the index within just one for loop since the loop cannot update its size with the popping, so use two loops is better. 
