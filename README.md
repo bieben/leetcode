@@ -53,6 +53,6 @@ Notes:
 - Not so familar with sliding window, also with the edge conditions of the iteration. Like the start and end pointer, initialize it to 0 or 1. Just be careful of it because it is important to solve problem with edge case thinking in the code interview or any other problems.
 
 ### Summary:
-2 hours work.
-Cannot solve by myself.
-Try to review them after submission to strengthen the memory.
+2 hours work.  
+Cannot solve by myself.  
+Try to review them after submission to strengthen the memory.  
