@@ -56,3 +56,4 @@ Notes:
 2 hours work.  
 Cannot solve by myself.  
 Try to review them after submission to strengthen the memory.  
+And remember to read the problem carefully. Be sure to understand it.
