@@ -1,5 +1,5 @@
 # leetcode
-## Day 1
+## Day 1 - Array part 1
 ### [704. Binary Search](https://leetcode.com/problems/binary-search/description/)
 1. Using while left < right
    - This condition avoids mid element being equal to right element, thus reducing the risk of infinite loop.
@@ -29,11 +29,11 @@ Notes:
 - When using force brute, it would be out of the index within just one for loop since the loop cannot update its size with the popping, so use two loops is better.  
 
 ### Summary:
-Good start for the Carl's bootcamp!  
-Today's problem is easy and time costs about 2 hours.  
-Keep hustling!
+- Good start for the Carl's bootcamp!  
+- Today's problem is easy and time costs about 2 hours.  
+- Keep hustling!
 
-## Day 2
+## Day 2 - Array part 2
 ### [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/description/)
 1. Use Two pointers to iterate array from head and tail. Since the number is non-decreasing, the biggest square of numbers should be placed on the two sides.
 2. Complexity:
@@ -53,18 +53,18 @@ Notes:
 - Not so familar with sliding window, also with the edge conditions of the iteration. Like the start and end pointer, initialize it to 0 or 1. Just be careful of it because it is important to solve problem with edge case thinking in the code interview or any other problems.
 
 ### Summary:
-2 hours work.  
-Cannot solve by myself.  
-Try to review them after submission to strengthen the memory.  
-And remember to read the problem carefully. Be sure to understand it.
+- 2 hours work.  
+- Cannot solve by myself.  
+- Try to review them after submission to strengthen the memory.  
+- And remember to read the problem carefully. Be sure to understand it.
 
-## Day 3
+## Day 3 - Linked List part 1
 ### [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/description/)
 1. Use a dummy head node for two reasons:
-- Store the original linked list to return after ajustment.
-- Make sure that target node could be removed when current node is the head node. (node.next = node.next.next)
-
-2. Complexity:
+   - Store the original linked list to return after ajustment.
+   - Make sure that target node could be removed when current node is the head node. (node.next = node.next.next)
+2. Pay attention to the move of pointers. 
+3. Complexity:
    - Time: O(n)
    - Space: O(1)
 
@@ -91,7 +91,8 @@ Notes:
    - Inside the loop, use tmp to store current node temporily.
 
 2. Recursion:
-   - Same internal logic as Two pointers. Update cur and pre in the return value. 
+   - Same internal logic as Two pointers. 
+   - Exit when cur == None. Update cur and pre in the return value. 
 3. Complexity:
    - Time: O(n)
    - Space: O(1) with TP, O(n) with Recursion.
@@ -100,7 +101,88 @@ Notes:
 - Can figure ou the logic in the loop, but wrongly set up a dummy node which is not necessary. 
 - Just strenthen the logic, and pay more attention to the other parts.
 
-Summary:  
-Expire to the next day.  
-Be more efficient and more focus on the problem solving.
+### Summary:  
+- Expire to the next day.  
+- Be more efficient and more focus on the problem solving.
+## Day 4
+miss
+## Day 5
+Rest
 
+## Day 6 - Hash Map part 1
+### [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/description/)
+1. Iterate given String and target String, use an array to record chr's appearance and check in the target String.
+2. Use ord() to store every char in a hash map of 26 letters. Then check them in the target string.
+3. Complexity:
+   - Time: O(n)
+   - Space: O(1)
+
+### [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/description/)
+1. Use hash map to store the elements of first array, then check the second array if element in the map. Delete element in the hash map after add the intersection in the result list.
+2. Complexity:
+   - Time: O(n+m), create the hash map from nums1(n length of nums1) and iterate over nums2 and check in the hash map(m: length of nums2; plus 1:lookup the hash map).
+   - Space: O(n), hash map(n) and result array(min(n,m) min length of nums1 and nums2)
+
+### [202. Happy Number](https://leetcode.com/problems/happy-number/description/)
+1. Use set to store the calculated sum while iterating, since if a repeat sum is appear it means that the iteration will never end.
+2. Use sum with for loop to calculate sum of square of every digit.
+3. Complexity:
+   - Time: O(logn), the number of digits in a number n is prportional to the logarithm of n, which is approximately log10(n) digits. e.g. 1000 has 4 digits(log10(1000) = 3).
+   - Space: O(logn), it's related to the number of digits in n and the unique numbers generated from those digits.
+
+Notes:
+- Not so familar with calculating the square of every digits in n.
+- Set can store unique elements.
+
+### [1. Two Sum](https://leetcode.com/problems/two-sum/description/)
+1. Use hash map to store difference with target and the index. When encounter the target complement value, return two index at the same time.
+2. Hash Map:
+   - Store value and index at the same time.
+   - Quickly track the Complement value in O(1) average time.
+   - Avoid nested loop.
+3. Complexity:
+   - Time: O(n)
+   - Space: O(n)  
+
+### Summary:
+- Miss a day practice and complete it today.
+- Easy problems but strengthen the memory and solutions.
+
+## Day 7 - Hash map part 2
+### [454. 4Sum II](https://leetcode.com/problems/4sum-ii/description/)
+1. Divide it into 2 parts with two nums. Thus there are only two for loop with O(n2).
+2. Use hash map to store complement value.
+3. Complexity:
+   - Time: O(n2)
+   - Space: O(n2), which worst case is that A and B are totally different.
+
+Note:
+- If 4 for loop are too slow, try to split it into 2 part to calculate sum.
+
+### [383. Ransom Note](https://leetcode.com/problems/ransom-note/description/)
+1. Use hash map to check two string.
+2. Use array to build a hash map for 26 letter. Iterate two strings then compare the count of every letter with all() function.
+3. Complexity:
+   - Time: O(n)
+   - Space: O(1) for array-based O(u) for dictionary-based.
+
+Notes:
+- Use array-based for space efficiency.
+
+### [3. 3Sum](https://leetcode.com/problems/3sum/description/)
+1. Use 2 pointers to iterate array and to find target pair. 
+2. Skip duplicate inside the *while* loop for two pointers(left and right) and also in the *for* loop for first pointer.
+3. Complexity:
+   - Time: O(n2), O(nlogn) for sorting and O(n2) for finding triplets.
+   - Space: O(1)
+
+### [18. 4Sum](https://leetcode.com/problems/4sum/description/)
+1. Same logic as 3Sum, but one more for loop.
+2. Adjust skipping duplicate with second for loop. Avoid wrongly skipping valid value by skip as j > i+1.
+3. Complexity:
+   - Time: O(n3)
+   - Space: O(1)
+
+### Summary:
+- Strengthen the logic of the **Sum** Problems.
+- Dictionary takes more space than array, but less time than array. Decision of using which depends on the type of given data.
