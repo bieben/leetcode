@@ -186,3 +186,24 @@ Notes:
 ### Summary:
 - Strengthen the logic of the **Sum** Problems.
 - Dictionary takes more space than array, but less time than array. Decision of using which depends on the type of given data.
+
+## Day 13 - Stack and Queue part 3
+### [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/description/)
+1. Use deque to get the max num of current sliding window.
+   - **Adding Elements to Deque**: While the current element *x* is greater than the last element of deque, remove from the back of deque. This ensure the deque always has the largest element at the front.
+   - **Appending to Deque**: Append the index of the current element to the deque.
+   - **Maintain Window Size**: If the first element of deque is outside the current window(the difference between the current index i and the index at the front of the deque is at least k, i - q[0]), remove it from the front.
+   - **Adding to Result**: Once the window size reaches 'k', add the element corresponding to the front of the deque to the result list 'res', as it's the maximum in the current window.
+2. Complexity:
+   - Time: O(n)
+   - Space: O(k)
+
+### [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/description/)
+1. Use hash map to record the frequency and value.
+2. Use a Min-Heap(Priority Queue) to sort and get the result in k size.
+   - Insert *freq* and *key* into a min-heap.
+   - If the size exceeds *k*, pop the smallest frequency(at the top of the heap). It ensures that only the 'k' most frequent elements remain in the heap.
+   - Build and return the result list by populated in reverse order(poping elements from the heap, to ensure that higher frequency elements are placed at the end of the list).
+3. Complexity:
+   - Time: O(nlogk), counting freqency with O(n), insert n elements into heap(O(logk) for each) takes O(nlogk), and building result by heappop(logk for each) with additional O(klogk). Overall is O(nlogk + klogk).
+   - Space: O(n)
